@@ -191,7 +191,23 @@ canvas { position:relative; width:100%; height:100%; display:block; background:t
 </head>
 <body>
 
+<style>
+#hc-logo {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  z-index: 999;
+  width: 200px;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+#hc-logo img { width: 100%; display: block; }
+#hc-logo:hover { transform: scale(1.08); }
+</style>
+
 <section id="etch-section">
+<a id="hc-logo" href="https://hackclub.com" target="_blank" rel="noopener">
+  <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club">
+</a>
 <div id="doodle-bg">
 <img class="doodle" style="left:2%;top:2%;width:90px;transform:rotate(-12deg);" src="assets/doodle-blue-monster.png" alt="">
 <img class="doodle" style="left:88%;top:4%;width:75px;transform:rotate(10deg);" src="assets/doodle-cursor-arrow.png" alt="">
@@ -241,7 +257,7 @@ canvas { position:relative; width:100%; height:100%; display:block; background:t
 
 <style>
 #gallery {
-  background: rgba(40,39,53,0.88);
+  background: #282735;
   padding: 50px 4% 60px;
   display: flex;
   flex-direction: column;
@@ -337,7 +353,7 @@ canvas { position:relative; width:100%; height:100%; display:block; background:t
     <img class="collage-item" style="left:26%;top:4%;width:265px;transform:rotate(-4deg);" src="assets/collage-splat-build-drawing-app.png" alt="">
     <img class="collage-item" style="left:56%;top:2%;width:330px;transform:rotate(3deg);" src="assets/collage-splat-unique-interaction.png" alt="">
     <img class="collage-item" style="left:24%;top:52%;width:265px;transform:rotate(-6deg);" src="assets/collage-splat-make-it-fun.png" alt="">
-    <img class="collage-item" style="left:57%;top:44%;width:265px;transform:rotate(5deg);" src="assets/collage-splat-submit-publish.png" alt="">
+    <img class="collage-item" style="left:57%;top:44%;width:265px;transform:rotate(5deg);" src="assets/publish_it_online.png" alt="">
 
   </div>
 
@@ -345,6 +361,21 @@ canvas { position:relative; width:100%; height:100%; display:block; background:t
 </section>
 
 <style>
+.collage-sticker {
+  position: absolute;
+  z-index: 10;
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(11px, 1.3vw, 15px);
+  color: #282735;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 #submit-btn {
   position: relative;
   z-index: 2;
@@ -397,8 +428,11 @@ canvas { position:relative; width:100%; height:100%; display:block; background:t
 
 <!-- ── Prizes section ── -->
 <section id="prizes-section">
+  <img class="prizes-artist prizes-artist-left" src="assets/celebrating.png" alt="">
+  <img class="prizes-artist prizes-artist-right" src="assets/celebrating.png" alt="">
 
   <h2 class="prizes-title">Prizes</h2>
+  <p class="prizes-subtitle">Projects will be reviewed based on functionality, creativity, and clarity of interaction.</p>
 
   <div id="prizes-carousel">
 
@@ -458,6 +492,39 @@ canvas { position:relative; width:100%; height:100%; display:block; background:t
 </section>
 
 <style>
+.prizes-artist {
+  position: absolute;
+  width: clamp(120px, 15vw, 200px);
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.prizes-artist-left {
+  left: 8%;
+}
+.prizes-artist-right {
+  right: 8%;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.prizes-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(26px, 3.5vw, 44px);
+  color: #282735;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.prizes-subtitle {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: #4a4a4a;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
 #prizes-section {
   background: #ffffff;
   padding: 70px 4% 90px;
@@ -620,6 +687,93 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <!-- ── Remember section ── -->
+<!-- ── FAQ section ── -->
+<section id="faq-section">
+  <h2 class="faq-title">FAQ</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>Who can participate?</summary>
+      <p>This program is open to participants who are 18 years old or under.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do I need programming experience?</summary>
+      <p>No! NotASketch is beginner-friendly. You can use simple tools like HTML Canvas or any framework you prefer.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What counts as a "unique interaction"?</summary>
+      <p>Any behavior that changes how drawing feels, such as delay, randomness, physics, or unusual controls.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I track my time?</summary>
+      <p>Coding time is tracked using Hackatime, while design and art time can be tracked using Lapse or equivalent tools.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Where do I publish my project?</summary>
+      <p>Projects must be published on itch.io (or a similar platform) and must be playable directly in the browser.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What is not allowed?</summary>
+      <p>Simple paint clones or projects without a unique interaction are not allowed.</p>
+    </details>
+  </div>
+</section>
+
+<style>
+#faq-section {
+  background: #282735;
+  padding: 70px 4% 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+.faq-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(26px, 3.5vw, 44px);
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.faq-list {
+  width: 100%;
+  max-width: 700px;
+}
+.faq-item {
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.faq-item summary {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(15px, 2vw, 20px);
+  color: #ffffff;
+  cursor: pointer;
+  padding: 14px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item summary::after {
+  content: '+';
+  font-size: 24px;
+  color: #ffffff;
+  transition: transform 0.2s;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item p {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  padding: 0 0 16px;
+}
+</style>
+
 <section id="remember-section">
   <p id="remember-title">Remember...</p>
   <div id="remember-row">
@@ -631,10 +785,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <style>
 #remember-section {
   background-color: #f0ede4;
-  background-image: url("assets/bg-extracted-1.png");
+  background-image: url("assets/bg-extracted-2.png");
   background-repeat: repeat;
   background-size: 55%;
-  opacity: 0.7;
+  opacity: 0.85;
   padding: 28px 5% 36px;
   display: flex;
   flex-direction: column;
@@ -663,6 +817,11 @@ document.addEventListener('DOMContentLoaded', function() {
   width: clamp(220px, 28vw, 380px);
   height: auto;
   transition: transform 0.25s ease, filter 0.25s ease;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 .remember-item:hover {
   transform: scale(1.06) translateY(-6px) rotate(0deg) !important;
@@ -670,8 +829,67 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 </style>
 
+<!-- ── Footer ── -->
+<footer id="site-footer">
 
+  <p class="footer-text">NotASketch is made with ♡ by teenagers, for teenagers</p>
+  <div class="footer-links">
+    <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a>
+    <a href="https://hackclub.com/slack" target="_blank" rel="noopener">Join Our Slack</a>
+  </div>
+</footer>
 
+<style>
+#site-footer {
+  background-color: #f0ede4;
+  background-image: url("assets/bg-extracted-2.png");
+  background-repeat: repeat;
+  background-size: 55%;
+  padding: 50px 5% 60px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+.footer-line {
+  border: none;
+  border-top: 1px solid rgba(40,39,53,0.08);
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+.footer-text {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(18px, 2.5vw, 28px);
+  color: #282735;
+  background: #fff;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  margin-bottom: 20px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.footer-links a {
+  font-family: 'Courier Prime', monospace;
+  font-size: clamp(14px, 1.5vw, 17px);
+  color: #282735;
+  text-decoration: none;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.footer-links a:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+</style>
 
 <style>
 #illo-title {
@@ -686,8 +904,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 
+<script>var LOGO_PATHS = [];</script>
+<script src="assets/logo-paths.js"></script>
 <script>
-let LOGO_PATHS = [];
 
 const SECTIONS = [
   {
@@ -915,6 +1134,7 @@ function updateShake(sy) {
 
 
 function onScroll() {
+  if (!layout) return;
   const sy=window.scrollY, dy=sy-lastSY; lastSY=sy;
   checkIntroComplete(sy);
   kLa+=dy*1.1; kRa+=dy*0.9;
@@ -924,6 +1144,13 @@ function onScroll() {
   etchEl.style.transform=`rotate(${tilt}deg)`;
   setTimeout(()=>{etchEl.style.transform=`rotate(${tilt*0.2}deg)`;},80);
   updateShake(sy); render(sy);
+  const etchSec = document.getElementById('etch-section');
+  const hcLogo = document.getElementById('hc-logo');
+  if (etchSec && hcLogo) {
+    const rect = etchSec.getBoundingClientRect();
+    hcLogo.style.opacity = (rect.bottom > 0 && rect.top < window.innerHeight) ? '1' : '0';
+    hcLogo.style.pointerEvents = (rect.bottom > 0 && rect.top < window.innerHeight) ? 'auto' : 'none';
+  }
 }
 
 function setup() {
@@ -1084,11 +1311,7 @@ function playShakeSound() {
 window.addEventListener('scroll',onScroll,{passive:true});
 window.addEventListener('resize',setup);
 
-// Load LOGO_PATHS from external file, then init
-fetch('assets/logo-paths.txt')
-  .then(r => r.text())
-  .then(t => { LOGO_PATHS = JSON.parse(t); setup(); })
-  .catch(() => { console.warn('Failed to load logo-paths.txt, using empty paths'); setup(); });
+setup();
 </script>
 </body>
 </html>

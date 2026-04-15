@@ -31,7 +31,7 @@ No frameworks. No build tools. Just HTML, CSS, and vanilla JS.
 
 ## Links
 
-- [Landing page](https://notasketch.hackclub.com)
+- [Landing page](https://blo0m-in.github.io/notasketch/)
 - [Submit your project](https://forms.hackclub.com/t/2aY6BxKNJyus)
 - [Hack Club](https://hackclub.com)
 - [Hack Club Slack](https://hackclub.com/slack)

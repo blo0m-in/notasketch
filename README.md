@@ -27,7 +27,6 @@ Projects are reviewed based on functionality, creativity, and clarity of interac
 
 This repository contains the landing page for NotASketch. It features an interactive etch-a-sketch that draws as you scroll, a sketch mode with keyboard controls, and sections explaining the program, prizes, and FAQ.
 
-No frameworks. No build tools. Just HTML, CSS, and vanilla JS.
 
 ## Links
 
